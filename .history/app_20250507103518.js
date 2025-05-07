@@ -151,64 +151,26 @@ function inverterLista(){
 }
 
 function jokempo(){
-    
+    let user1;
+    let user2
     let turno = 1;
-    let rodada = [];
+    let caixa = [];
     let ganhador;
-    let placar = [];
-    while(true){
+    let placar= [];
+    do{
         console.log("-- menu --")
         console.log("1 - Pedra")
         console.log("2 - Papel")
         console.log("3 - Tesoura")
+        let user1 = readline.question(`digite sua escolha${user1}`);
+        let user2 = readline.question(`digite sua escolha${user2}`);
+        caixa[1]=user1;
+        caixa[2]=user2;
 
-        let user1 = readline.question("Jogador 1, digite sua escolha (1, 2 ou 3): ");
-        let user2 = readline.question("Jogador 2, digite sua escolha (1, 2 ou 3): ");
-        
-        let escolhas = ["Pedra", "Papel", "Tesoura"];
+        if(caixa[1]==caixa[2]){
+            console.log("empate")
 
-        let escolha1 = parseInt(user1);
-        let escolha2 = parseInt(user2);
-
-        if (![1, 2, 3].includes(escolha1) || ![1, 2, 3].includes(escolha2)) {
-            console.log("Escolha inválida. Tente novamente.");
-            continue;
         }
-
-    
-        console.log(`Jogador 1 escolheu: ${escolhas[escolha1 - 1]}`);
-        console.log(`Jogador 2 escolheu: ${escolhas[escolha2 - 1]}`);
-
-        if (escolha1 === escolha2) {
-            console.log("Empate!");
-        } else if (
-            (escolha1 === 1 && escolha2 === 3) ||
-            (escolha1 === 2 && escolha2 === 1) ||
-            (escolha1 === 3 && escolha2 === 2)
-        ) {
-            console.log("Jogador 1 venceu!");
-            placar[0]++;
-        } else {
-            console.log("Jogador 2 venceu!");
-            placar[1]++;
-        }
-
-        console.log(`Placar: Jogador 1 - ${placar[0]} | Jogador 2 - ${placar[1]}`);
-
-        let continuar = readline.question("Deseja jogar outra rodada? (s/n): ");
-        if (continuar.toLowerCase() !== 's') break;
-
-        turno++;
-    }
-
-    console.log("Jogo encerrado!");
-    console.log(`Placar final: Jogador 1 - ${placar[0]} | Jogador 2 - ${placar[1]}`);
-}
-
-jokempo();
-
-
-
-    }
+    }while(turno<4)
 }
 

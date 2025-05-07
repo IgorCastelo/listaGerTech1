@@ -130,85 +130,13 @@ function MenuCrud() {
     }
 
 
-
-
+console.log(calc());
 
 
 function inverterLista(){
     let nomes = [];
-    
-   
-    for(let i = 0; i<7; i++){
-        let input = readline.question(`digite a ${i+1} posicao da lista`);
-        nomes[i]=input;
-    }
+    let i;
+    for(i; i<nomes.length)
 
-    console.log(`Lista original: ${nomes}`)
-    
-    let nomesInvertidos = [];
-    nomesInvertidos = nomes.reverse();
-    console.log(nomesInvertidos)
-}
-
-function jokempo(){
-    
-    let turno = 1;
-    let rodada = [];
-    let ganhador;
-    let placar = [];
-    while(true){
-        console.log("-- menu --")
-        console.log("1 - Pedra")
-        console.log("2 - Papel")
-        console.log("3 - Tesoura")
-
-        let user1 = readline.question("Jogador 1, digite sua escolha (1, 2 ou 3): ");
-        let user2 = readline.question("Jogador 2, digite sua escolha (1, 2 ou 3): ");
-        
-        let escolhas = ["Pedra", "Papel", "Tesoura"];
-
-        let escolha1 = parseInt(user1);
-        let escolha2 = parseInt(user2);
-
-        if (![1, 2, 3].includes(escolha1) || ![1, 2, 3].includes(escolha2)) {
-            console.log("Escolha inválida. Tente novamente.");
-            continue;
-        }
-
-    
-        console.log(`Jogador 1 escolheu: ${escolhas[escolha1 - 1]}`);
-        console.log(`Jogador 2 escolheu: ${escolhas[escolha2 - 1]}`);
-
-        if (escolha1 === escolha2) {
-            console.log("Empate!");
-        } else if (
-            (escolha1 === 1 && escolha2 === 3) ||
-            (escolha1 === 2 && escolha2 === 1) ||
-            (escolha1 === 3 && escolha2 === 2)
-        ) {
-            console.log("Jogador 1 venceu!");
-            placar[0]++;
-        } else {
-            console.log("Jogador 2 venceu!");
-            placar[1]++;
-        }
-
-        console.log(`Placar: Jogador 1 - ${placar[0]} | Jogador 2 - ${placar[1]}`);
-
-        let continuar = readline.question("Deseja jogar outra rodada? (s/n): ");
-        if (continuar.toLowerCase() !== 's') break;
-
-        turno++;
-    }
-
-    console.log("Jogo encerrado!");
-    console.log(`Placar final: Jogador 1 - ${placar[0]} | Jogador 2 - ${placar[1]}`);
-}
-
-jokempo();
-
-
-
-    }
 }
 
